@@ -12,7 +12,7 @@
       href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
       rel="stylesheet"
     />
-    <title>Resume Builder</title>
+    <title>ResuMaker</title>
   </head>
   <body>
     <nav class="sidebar close">
@@ -20,18 +20,19 @@
         <div class="image-text">
           <span class="image">
             <img
-              src="https://thumbs.dreamstime.com/b/google-logo-editorial-vector-symbol-isolated-transparent-background-279621757.jpg"
+              src="img\ResuMaker.png"
               alt=""
+              id="resumaker-img"
             />
           </span>
 
           <div class="text logo-text">
-            <span class="name">Resume builder</span>
-            <span class="profession">by: Autobot</span>
+            <span class="name" >ResuMaker</span>
+            
           </div>
         </div>
 
-        <i class="bx bx-chevron-right toggle"></i>
+  
       </header>
 
       <div class="menu-bar">
@@ -42,7 +43,7 @@
                 </li> -->
 
           <ul class="menu-links">
-            <li class="nav-link">
+            <li class="nav-link" >
               <a href="#">
                 <i class="bx bx-paint icon"></i>
                 <span class="text nav-text">Change Theme</span>
@@ -59,10 +60,10 @@
         </div>
 
         <div class="bottom-content">
-          <li class="">
-            <a href="#">
+          <li class="logout">
+            <a href="/resumeNew/">
               <i class="bx bx-log-out icon"></i>
-              <span class="text nav-text">Logout</span>
+              <span class="text nav-text" onclick="redirectToPage()">Logout</span>
             </a>
           </li>
 
@@ -81,31 +82,7 @@
       </div>
     </nav>
 
-    <script>
-      const body = document.querySelector("body"),
-        sidebar = body.querySelector("nav"),
-        toggle = body.querySelector(".toggle"),
-        //   searchBtn = body.querySelector(".search-box"),
-        modeSwitch = body.querySelector(".toggle-switch"),
-        modeText = body.querySelector(".mode-text");
-
-      toggle.addEventListener("click", () => {
-        sidebar.classList.toggle("close");
-      });
-
-      // searchBtn.addEventListener("click" , () =>{
-      //     sidebar.classList.remove("close");
-      // })
-
-      modeSwitch.addEventListener("click", () => {
-        body.classList.toggle("dark");
-
-        if (body.classList.contains("dark")) {
-          modeText.innerText = "Light mode";
-        } else {
-          modeText.innerText = "Dark mode";
-        }
-      });
+    <script src="./js/layout.js">
     </script>
   </body>
 </html>
