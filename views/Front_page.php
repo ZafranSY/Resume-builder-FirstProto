@@ -15,20 +15,25 @@ include("./controller/connection.php");
         <div class="form-container sign-in">
             <form action="login.php" method="POST">
                 <h1>Sign In</h1>
-                <input type="email" placeholder="Email" name="user" required/>
+                <input type="email" placeholder="Email" name="email" required/>
                 <input type="password" placeholder="Password" name="pass" required/>
-                <button type="submit" name="submit">Sign In</button>
+                <a href="views\forgot_pass.php" class="forgot-password">Forgot password?</a>               
+                 <button type="submit" name="submit">Sign In</button>
+                <!-- <span class="message"> Sending your message...</span> -->
+
             </form>
         </div>
         <div class="form-container sign-up">
-            <form action="" method="post">
+            <form action="signup.php" method="POST">
                 <h1>Sign Up</h1>
-                <input type="text" placeholder="Name">
-                <input type="email" placeholder="Email" />
-                <input type="password" placeholder="Password" />
-                <button>Sign Up</button>
+                <input type="text" placeholder="Name" name="name" required/>
+                <input type="email" placeholder="Email" name="email"required/>
+                <input type="password" placeholder="Password" name="pass"required />
+                <input type="password" placeholder="Password" name="cpass" required/>
+                 <button type="submit" name="submit">Sign Up</button>
             </form>
         </div>
+        
         <div class="toggle-container">
             <div class="toggle">
                 <div class="toggle-panel toggle-in">
@@ -45,6 +50,7 @@ include("./controller/connection.php");
                 </div>
             </div>
         </div>
+        
     </div>
     <script src="./views/js/login.js"></script>
 </body>
