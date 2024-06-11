@@ -1,67 +1,110 @@
-<?php
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-        <link rel="stylesheet" href="./css/profile.css">
-
+    <title>Edit Profile</title>
+    <link rel="stylesheet" href="./css/profile.css">
 </head>
 <body>
     <div class="container">
-        <div class="Founder-details">
-            <div class="img">
-                <img src="img\Profile_picture.jpg" alt="">
-            </div>
-            <div class="Founder-name">
-                <p>ResuMaker Founder</p>
-                <h2>leardo Da Vinci</h2>
-
-            </div>
-            <div class="Founder-background">
-                <p>Leonardo di ser Piero da Vinci was an Italian Renaissance polymath. According to data available online, Leonardo da Vinci invented the first professional profile in 1482, which we call as the résumé. The word Resume originated from French résumé“to summarize”, and from Latin resumere “to take back”.</p>
-
-                <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">Read More</button>
-
-            </div> 
-
+        <div class="header">
+            <h2>Edit Profile</h2>
+            <p>Complete your profile</p>
         </div>
-        <div class="edit-profile">
-            <div class="navbar">
-                <h2> Profile</h2>
-                <p>Complete your Profile</p>
-                <ul>
-                    <li>Profile</li>
-                    <li class="school">School/College Details</li>
-                    <li>Experience and other</li>
-                </ul>
-            </div>
-            <div class="form-container">
-                <form action="">
-                    <input type="text" id="Fname" placeholder="First Name"style="width:49%;">
-                    <input type="text"id="Lname" placeholder="Last Name"style="width:49%;">
-                    <input type="text" placeholder="User Contact" style="width:30%;">
-                    <input type="email" placeholder="Email"style="width:30%;">
-                    <input type="text"    placeholder="Git Link"style="width:30%;">
-                    <input type="text" placeholder="Address"style="width:100%;">
-                    <input type="number" placeholder="Age"style="width:100%;">
-
-                <button type="button" class="btn btn-primary proceed" data-toggle="button" aria-pressed="false" autocomplete="off">Proceed</button>
-
-                </form>
-            </div>
+        <div class="tabs">
+            <div class="active">Profile</div>
+            <div>School/College Details</div>
+            <div>Experiences and Other</div>
+        </div>
+        <div class="section active">
+            <form action="./views/submit_profile.php" method="post">
+                <div class="form-group">
+                    <label for="first_name">First Name</label>
+                    <input type="text" id="first_name" name="first_name">
+                    <label for="last_name">Last Name</label>
+                    <input type="text" id="last_name" name="last_name">
+                </div>
+                <div class="form-group">
+                    <label for="user_contact">User Contact</label>
+                    <input type="text" id="user_contact" name="user_contact">
+                    <label for="email_address">Email address</label>
+                    <input type="email" id="email_address" name="email_address">
+                    <label for="git_link">Git link</label>
+                    <input type="url" id="git_link" name="git_link">
+                </div>
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <input type="text" id="address" name="address">
+                </div>
+                <div class="form-group">
+                    <label for="age">Age</label>
+                    <input type="number" id="age" name="age">
+                </div>
+                <div class="button-container">
+                    <button class="button" type="submit">Proceed</button>
+                </div>
+            </form>
+        </div>
+        <div class="section">
+            <form action="./views/submit_school_college.php" method="post">
+                <div class="form-group">
+                    <label for="school_name">School Name</label>
+                    <input type="text" id="school_name" name="school_name">
+                    <label for="ssc_marks">SSC Marks</label>
+                    <input type="text" id="ssc_marks" name="ssc_marks">
+                </div>
+                <div class="form-group">
+                    <label for="hsc_college_name">HSC College Name</label>
+                    <input type="text" id="hsc_college_name" name="hsc_college_name">
+                    <label for="hsc_marks">HSC Marks</label>
+                    <input type="text" id="hsc_marks" name="hsc_marks">
+                </div>
+                <div class="form-group">
+                    <label for="degree_college_name">Degree College Name</label>
+                    <input type="text" id="degree_college_name" name="degree_college_name">
+                    <label for="branch">Branch</label>
+                    <input type="text" id="branch" name="branch">
+                    <label for="current_aggregate_pointer">Current Aggregate Pointer</label>
+                    <input type="text" id="current_aggregate_pointer" name="current_aggregate_pointer">
+                </div>
+                <div class="button-container">
+                    <button class="button" type="submit">Proceed</button>
+                </div>
+            </form>
+        </div>
+        <div class="section">
+            <form action="./views/submit_experiences.php" method="post">
+                <div class="form-group">
+                    <label for="achievements">Achievements (Enter in format [rank - title - period])</label>
+                    <textarea id="achievements" name="achievements"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="languages">Known and worked on Languages (Enter languages ',' separated)</label>
+                    <textarea id="languages" name="languages"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="projects">Projects (Enter Project ',' separated)</label>
+                    <textarea id="projects" name="projects"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="experience">Any Experience?</label>
+                    <textarea id="experience" name="experience"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="co_curricular">Co-Curricular Activity</label>
+                    <textarea id="co_curricular" name="co_curricular"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="extra_curricular">Extra-Curricular</label>
+                    <textarea id="extra_curricular" name="extra_curricular"></textarea>
+                </div>
+                <div class="button-container">
+                    <button class="button" type="submit">Proceed</button>
+                </div>
+            </form>
         </div>
     </div>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-        <script>
-             const btn = document.querySelector(".proceed");
-             btn.addEventListener("click",()=>{
-                window.location.href = "layout.php";
-             })
-        </script>
+    <script src="./js/profile.js"></script>
 </body>
 </html>
