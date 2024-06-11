@@ -72,15 +72,29 @@ body {
   margin-bottom: 15px;
 }
 
-.form-group label {
+.input-group {
+  display: flex;
+  flex-direction: column;
   flex: 1;
   margin-right: 10px;
+}
+
+.input-group label {
+  margin-bottom: 5px;
   line-height: 32px;
+}
+
+.input-group.full-width {
+  flex: 2;
+}
+
+.input-group.full-width input,
+.input-group.full-width textarea {
+  width: 100%;
 }
 
 .form-group input,
 .form-group textarea {
-  flex: 2;
   padding: 8px;
   border: 1px solid #cccccc;
   border-radius: 4px;
