@@ -86,3 +86,6 @@
     </script>
   </body>
 </html>
+<?php
+include "template1.php";
+?>

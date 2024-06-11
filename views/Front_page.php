@@ -52,6 +52,7 @@ include("./controller/connection.php");
         </div>
         
     </div>
+
     <script src="./views/js/login.js"></script>
 </body>
 </html>

@@ -17,7 +17,7 @@ $sql = "select * from login where email = '$email' and password = '$password'";
         $count = mysqli_num_rows($result);  
         
         if($count == 1){  
-            header("Location: ./views/layout.php");
+            header("Location: ./views/profile.php");
         }  
         else{  
             echo  '<script>

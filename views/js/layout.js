@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   logout.addEventListener("click", (event) => {
     event.preventDefault();
-    window.location.href = "index.php";
+    window.location.href = "/resumeNew/";
   });
 
   function redirectToPage() {
