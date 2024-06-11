@@ -13,136 +13,120 @@
             <p>Complete your profile</p>
         </div>
         <div class="tabs">
-            <div class="active">Profile</div>
-            <div>School/College Details</div>
-            <div>Experiences and Other</div>
+            <div class="tab active" data-tab="profile">Profile</div>
+            <div class="tab" data-tab="education">School/College Details</div>
+            <div class="tab" data-tab="experience">Experiences and Other</div>
         </div>
-        <div class="section active">
-            <form action="./views/submit_profile.php" method="post">
-                <div class="form-group">
-                    <div class="input-group">
-                        <label for="first_name">First Name</label>
-                        <input type="text" id="first_name" name="first_name">
+        <div class="sections">
+            <div class="section active" id="profile">
+                <form action="./views/submit_profile.php" method="post">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name">
                     </div>
-                    <div class="input-group">
-                        <label for="last_name">Last Name</label>
-                        <input type="text" id="last_name" name="last_name">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email">
                     </div>
-                </div>
-                <div class="form-group">
-                    <div class="input-group">
-                        <label for="user_contact">User Contact</label>
-                        <input type="text" id="user_contact" name="user_contact">
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="text" id="phone" name="phone">
                     </div>
-                    <div class="input-group">
-                        <label for="email_address">Email address</label>
-                        <input type="email" id="email_address" name="email_address">
-                    </div>
-                    <div class="input-group">
-                        <label for="git_link">Git link</label>
-                        <input type="url" id="git_link" name="git_link">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="input-group full-width">
+                    <div class="form-group">
                         <label for="address">Address</label>
-                        <input type="text" id="address" name="address">
+                        <textarea id="address" name="address"></textarea>
                     </div>
-                </div>
-                <div class="form-group">
-                    <div class="input-group full-width">
-                        <label for="age">Age</label>
-                        <input type="number" id="age" name="age">
+                    <div class="form-group">
+                        <label for="summary">Summary</label>
+                        <textarea id="summary" name="summary"></textarea>
                     </div>
-                </div>
-                <div class="button-container">
-                    <button class="button" type="submit">Proceed</button>
-                </div>
-            </form>
-        </div>
-        <div class="section">
-            <form action="./views/submit_school_college.php" method="post">
-                <div class="form-group">
-                    <div class="input-group">
+                    <div class="form-group">
+                        <label for="linkedin">LinkedIn/GitHub</label>
+                        <input type="url" id="linkedin" name="linkedin">
+                    </div>
+                    <div class="button-container">
+                        <button class="button" type="button">Proceed</button>
+                    </div>
+                </form>
+            </div>
+            <div class="section" id="education">
+                <form action="./views/submit_school_college.php" method="post">
+                    <div class="form-group">
                         <label for="school_name">School Name</label>
                         <input type="text" id="school_name" name="school_name">
                     </div>
-                    <div class="input-group">
-                        <label for="ssc_marks">SSC Marks</label>
-                        <input type="text" id="ssc_marks" name="ssc_marks">
+                    <div class="form-group">
+                        <label for="school_location">Location</label>
+                        <input type="text" id="school_location" name="school_location">
                     </div>
-                </div>
-                <div class="form-group">
-                    <div class="input-group">
-                        <label for="hsc_college_name">HSC College Name</label>
-                        <input type="text" id="hsc_college_name" name="hsc_college_name">
+                    <div class="form-group">
+                        <label for="school_year">Year</label>
+                        <input type="text" id="school_year" name="school_year">
                     </div>
-                    <div class="input-group">
-                        <label for="hsc_marks">HSC Marks</label>
-                        <input type="text" id="hsc_marks" name="hsc_marks">
+                    <div class="form-group">
+                        <label for="school_description">Description</label>
+                        <textarea id="school_description" name="school_description"></textarea>
                     </div>
-                </div>
-                <div class="form-group">
-                    <div class="input-group">
-                        <label for="degree_college_name">Degree College Name</label>
-                        <input type="text" id="degree_college_name" name="degree_college_name">
+                    <div class="form-group">
+                        <label for="college_name">College Name</label>
+                        <input type="text" id="college_name" name="college_name">
                     </div>
-                    <div class="input-group">
-                        <label for="branch">Branch</label>
-                        <input type="text" id="branch" name="branch">
+                    <div class="form-group">
+                        <label for="college_location">Location</label>
+                        <input type="text" id="college_location" name="college_location">
                     </div>
-                    <div class="input-group">
-                        <label for="current_aggregate_pointer">Current Aggregate Pointer</label>
-                        <input type="text" id="current_aggregate_pointer" name="current_aggregate_pointer">
+                    <div class="form-group">
+                        <label for="college_year">Year</label>
+                        <input type="text" id="college_year" name="college_year">
                     </div>
-                </div>
-                <div class="button-container">
-                    <button class="button" type="submit">Proceed</button>
-                </div>
-            </form>
-        </div>
-        <div class="section">
-            <form action="./views/submit_experiences.php" method="post">
-                <div class="form-group">
-                    <div class="input-group full-width">
-                        <label for="achievements">Achievements (Enter in format [rank - title - period])</label>
-                        <textarea id="achievements" name="achievements"></textarea>
+                    <div class="form-group">
+                        <label for="college_description">Description</label>
+                        <textarea id="college_description" name="college_description"></textarea>
                     </div>
-                </div>
-                <div class="form-group">
-                    <div class="input-group full-width">
-                        <label for="languages">Known and worked on Languages (Enter languages ',' separated)</label>
-                        <textarea id="languages" name="languages"></textarea>
+                    <div class="form-group">
+                        <label for="university_name">University Name</label>
+                        <input type="text" id="university_name" name="university_name">
                     </div>
-                </div>
-                <div class="form-group">
-                    <div class="input-group full-width">
-                        <label for="projects">Projects (Enter Project ',' separated)</label>
+                    <div class="form-group">
+                        <label for="university_location">Location</label>
+                        <input type="text" id="university_location" name="university_location">
+                    </div>
+                    <div class="form-group">
+                        <label for="university_year">Year</label>
+                        <input type="text" id="university_year" name="university_year">
+                    </div>
+                    <div class="form-group">
+                        <label for="university_description">Description</label>
+                        <textarea id="university_description" name="university_description"></textarea>
+                    </div>
+                    <div class="button-container">
+                        <button class="button" type="button">Proceed</button>
+                    </div>
+                </form>
+            </div>
+            <div class="section" id="experience">
+                <form action="./views/submit_experiences.php" method="post">
+                    <div class="form-group">
+                        <label for="work">Work</label>
+                        <textarea id="work" name="work"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="projects">Projects</label>
                         <textarea id="projects" name="projects"></textarea>
                     </div>
-                </div>
-                <div class="form-group">
-                    <div class="input-group full-width">
-                        <label for="experience">Any Experience?</label>
-                        <textarea id="experience" name="experience"></textarea>
+                    <div class="form-group">
+                        <label for="skills">Skills</label>
+                        <textarea id="skills" name="skills"></textarea>
                     </div>
-                </div>
-                <div class="form-group">
-                    <div class="input-group full-width">
-                        <label for="co_curricular">Co-Curricular Activity</label>
-                        <textarea id="co_curricular" name="co_curricular"></textarea>
+                    <div class="form-group">
+                        <label for="interests">Interests</label>
+                        <textarea id="interests" name="interests"></textarea>
                     </div>
-                </div>
-                <div class="form-group">
-                    <div class="input-group full-width">
-                        <label for="extra_curricular">Extra-Curricular</label>
-                        <textarea id="extra_curricular" name="extra_curricular"></textarea>
+                    <div class="button-container">
+                        <button class="button" type="submit">Submit</button>
                     </div>
-                </div>
-                <div class="button-container">
-                    <button class="button" type="submit">Proceed</button>
-                </div>
-            </form>
+                </form>
+            </div>
         </div>
     </div>
     <script src="./js/profile.js"></script>
