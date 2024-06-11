@@ -1,0 +1,103 @@
+:root {
+    --main-bg-color: #f7f7f7;
+    --border-color: #ddd;
+    --text-color: #333;
+    --header-color: #000;
+    --section-title-color: #666;
+    --section-border-color: #ccc;
+    --skill-bg-color: #ddd;
+}
+
+.theme-resume {
+    width: 210mm;
+    height: 297mm;
+    max-width: 100%;
+    margin: auto;
+    padding: 20mm;
+    box-sizing: border-box;
+    background-color: var(--main-bg-color);
+    border: 1px solid var(--border-color);
+}
+
+.theme-header {
+    text-align: center;
+    margin-bottom: 10mm;
+}
+
+.theme-header-title {
+    margin: 0;
+    font-size: 24px;
+    color: var(--header-color);
+}
+
+.theme-header-subtitle {
+    font-size: 14px;
+    color: var(--header-color);
+}
+
+.theme-section {
+    overflow: hidden;
+    padding: 0 10px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.theme-section-title {
+    margin: 0 0 5px;
+    border-bottom: 1px solid var(--section-border-color);
+    padding-bottom: 5px;
+    font-size: 16px;
+    color: var(--section-title-color);
+}
+
+.theme-job, .theme-school, .theme-project {
+    margin-bottom: 5px;
+}
+
+.theme-job-title, .theme-school-title, .theme-project-title {
+    margin: 0;
+    font-size: 14px;
+}
+
+.theme-grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.theme-skills-list, .theme-certifications-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.theme-skill-item, .theme-certification-item {
+    background-color: var(--skill-bg-color);
+    margin: 3px 0;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 12px;
+}
+
+.theme-contact-info {
+    margin-bottom: 10px;
+}
+
+.theme-experience {
+    margin-bottom: 10px;
+}
+
+.theme-education {
+    margin-bottom: 10px;
+}
+
+.theme-certifications {
+    margin-bottom: 10px;
+}
+
+.theme-skills {
+    margin-bottom: 10px;
+}
+
+.theme-projects {
+    margin-bottom: 10px;
+}
