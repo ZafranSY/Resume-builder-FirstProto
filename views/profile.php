@@ -104,29 +104,39 @@
                     </div>
                 </form>
             </div>
-            <div class="section" id="experience">
-                <form action="./views/submit_experiences.php" method="post">
-                    <div class="form-group">
-                        <label for="work">Work</label>
-                        <textarea id="work" name="work"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="projects">Projects</label>
-                        <textarea id="projects" name="projects"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="skills">Skills</label>
-                        <textarea id="skills" name="skills"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="interests">Interests</label>
-                        <textarea id="interests" name="interests"></textarea>
-                    </div>
-                    <div class="button-container">
-                        <button class="button" type="submit">Submit</button>
-                    </div>
+            <div class="Founder-background">
+                <p>Leonardo di ser Piero da Vinci was an Italian Renaissance polymath. According to data available online, Leonardo da Vinci invented the first professional profile in 1482, which we call as the résumé. The word Resume originated from French résumé“to summarize”, and from Latin resumere “to take back”.</p>
+
+                <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">Read More</button>
+
+            </div> 
+
+        </div>
+        <div class="edit-profile">
+            <div class="navbar">
+                <h2> Profile</h2>
+                <p>Complete your Profile</p>
+                <ul>
+                    <li>Profile</li>
+                    <li class="school">School/College Details</li>
+                    <li>Experience and other</li>
+                </ul>
+            </div>
+            <div class="form-container">
+                <form action="">
+                    <input type="text" id="Fname" placeholder="First Name"style="width:49%;">
+                    <input type="text"id="Lname" placeholder="Last Name"style="width:49%;">
+                    <input type="text" placeholder="User Contact" style="width:30%;">
+                    <input type="email" placeholder="Email"style="width:30%;">
+                    <input type="text"    placeholder="Git Link"style="width:30%;">
+                    <input type="text" placeholder="Address"style="width:100%;">
+                    <input type="number" placeholder="Age"style="width:100%;">
+
+                <button type="button" class="btn btn-primary proceed" data-toggle="button" aria-pressed="false" autocomplete="off">Proceed</button>
+
                 </form>
             </div>
+            
         </div>
     </div>
     <script src="./js/profile.js"></script>

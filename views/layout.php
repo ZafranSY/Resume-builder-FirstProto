@@ -122,3 +122,6 @@ modeSwitch.addEventListener("click" , () =>{
 
 </body>
 </html>
+<?php
+include "template1.php";
+?>

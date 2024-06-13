@@ -1,161 +1,125 @@
 <!DOCTYPE html>
+<!-- Coding by CodingLab | www.codinglabweb.com -->
+<!--https://www.codingnepalweb.com/sidebar-menu-in-html-css-javascript-dark-light-mode/-->
+<html lang="en">
 <head>
-    <link rel="stylesheet" href="./css/template1.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="result.css">
+    <link rel="stylesheet" href="theme1.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <title>Resume Builder</title> 
+
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-          <div class="full-name">
-            <span class="first-name">John</span> 
-            <span class="last-name">Doe</span>
-          </div>
-          <div class="contact-info">
-            <span class="email">Email: </span>
-            <span class="email-val">john.doe@gmail.com</span>
-            <span class="separator"></span>
-            <span class="phone">Phone: </span>
-            <span class="phone-val">111-222-3333</span>
-          </div>
-          
-          <div class="about">
-            <span class="position">Front-End Developer </span>
-            <span class="desc">
-              I am a front-end developer with more than 3 years of experience writing html, css, and js. I'm motivated, result-focused and seeking a successful team-oriented company with opportunity to grow. 
-            </span>
-          </div>
-        </div>
-         <div class="details">
-          <div class="section">
-            <div class="section__title">Experience</div>
-            <div class="section__list">
-              <div class="section__list-item">
-                <div class="left">
-                  <div class="name">KlowdBox</div>
-                  <div class="addr">San Fr, CA</div>
-                  <div class="duration">Jan 2011 - Feb 2015</div>
+    <nav class="sidebar close">
+        <header>
+            <div class="image-text">
+                <span class="image">
+                    <img src="https://thumbs.dreamstime.com/b/google-logo-editorial-vector-symbol-isolated-transparent-background-279621757.jpg" alt="">
+                </span>
+
+                <div class="text logo-text">
+                    <span class="name">Resume builder</span>
+                    <span class="profession">by: Autobot</span>
                 </div>
-                <div class="right">
-                  <div class="name">Fr developer</div>
-                  <div class="desc">did This and that</div>
-                </div>
-              </div>
-                      <div class="section__list-item">
-                <div class="left">
-                  <div class="name">Akount</div>
-                  <div class="addr">San Monica, CA</div>
-                  <div class="duration">Jan 2011 - Feb 2015</div>
-                </div>
-                <div class="right">
-                  <div class="name">Fr developer</div>
-                  <div class="desc">did This and that</div>
-                </div>
-              </div>
-      
             </div>
-          </div>
-          <div class="section">
-            <div class="section__title">Education</div>
-            <div class="section__list">
-              <div class="section__list-item">
-                <div class="left">
-                  <div class="name">Sample Institute of technology</div>
-                  <div class="addr">San Fr, CA</div>
-                  <div class="duration">Jan 2011 - Feb 2015</div>
-                </div>
-                <div class="right">
-                  <div class="name">Fr developer</div>
-                  <div class="desc">did This and that</div>
-                </div>
-              </div>
-              <div class="section__list-item">
-                <div class="left">
-                  <div class="name">Akount</div>
-                  <div class="addr">San Monica, CA</div>
-                  <div class="duration">Jan 2011 - Feb 2015</div>
-                </div>
-                <div class="right">
-                  <div class="name">Fr developer</div>
-                  <div class="desc">did This and that</div>
-                </div>
-              </div>
-      
+
+            <i class='bx bx-chevron-right toggle'></i>
+        </header>
+
+        <div class="menu-bar">
+            <div class="menu">
+
+                <!-- <li class="search-box">
+                    <i class='bx bx-search icon'></i>
+                    <input type="text" placeholder="Search...">
+                </li> -->
+
+                <ul class="menu-links">
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-paint icon' ></i>
+                            <span class="text nav-text">Change Theme</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-bar-chart-alt-2 icon' ></i>
+                            <span class="text nav-text">Update Details</span>
+                        </a>
+                    </li>
+
+
+
+                </ul>
             </div>
-            
+
+            <div class="bottom-content">
+                <li class="">
+                    <a href="#">
+                        <i class='bx bx-log-out icon' ></i>
+                        <span class="text nav-text">Logout</span>
+                    </a>
+                </li>
+
+                <li class="mode">
+                    <div class="sun-moon">
+                        <i class='bx bx-moon icon moon'></i>
+                        <i class='bx bx-sun icon sun'></i>
+                    </div>
+                    <span class="mode-text text">Dark mode</span>
+
+                    <div class="toggle-switch">
+                        <span class="switch"></span>
+                    </div>
+                </li>
+                
+            </div>
         </div>
-           <div class="section">
-            <div class="section__title">Projects</div> 
-             <div class="section__list">
-               <div class="section__list-item">
-                 <div class="name">DSP</div>
-                 <div class="text">I am a front-end developer with more than 3 years of experience writing html, css, and js. I'm motivated, result-focused and seeking a successful team-oriented company with opportunity to grow.</div>
-               </div>
-               
-               <div class="section__list-item">
-                          <div class="name">DSP</div>
-                 <div class="text">I am a front-end developer with more than 3 years of experience writing html, css, and js. I'm motivated, result-focused and seeking a successful team-oriented company with opportunity to grow. <a href="/login">link</a>
-                 </div>
-               </div>
-             </div>
-          </div>
-           <div class="section">
-             <div class="section__title">Skills</div>
-             <div class="skills">
-               <div class="skills__item">
-                 <div class="left"><div class="name">
-                   Javascript
-                   </div></div>
-                 <div class="right">
-                                <input  id="ck1" type="checkbox" checked/>
-      
-                   <label for="ck1"></label>
-                                <input id="ck2" type="checkbox" checked/>
-      
-                    <label for="ck2"></label>
-                               <input id="ck3" type="checkbox" />
-      
-                    <label for="ck3"></label>
-                                 <input id="ck4" type="checkbox" />
-                  <label for="ck4"></label>
-                                <input id="ck5" type="checkbox" />
-                    <label for="ck5"></label>
-      
-                 </div>
-               </div>
-               
-             </div>
-             <div class="skills__item">
-                 <div class="left"><div class="name">
-                   CSS</div></div>
-                 <div class="right">
-                                <input  id="ck1" type="checkbox" checked/>
-      
-                   <label for="ck1"></label>
-                                <input id="ck2" type="checkbox" checked/>
-      
-                    <label for="ck2"></label>
-                               <input id="ck3" type="checkbox" />
-      
-                    <label for="ck3"></label>
-                                 <input id="ck4" type="checkbox" />
-                  <label for="ck4"></label>
-                                <input id="ck5" type="checkbox" />
-                    <label for="ck5"></label>
-      
-                 </div>
-               </div>
-               
-             </div>
-           <div class="section">
-           <div class="section__title">
-             Interests
-             </div>
-             <div class="section__list">
-               <div class="section__list-item">
-                        Football, programming.
-                </div>
-             </div>
-           </div>
-           </div>
-        </div>
-      </div>
+
+    </nav>
+
+    <section class="home">
+        <div class="text">Resume Builder</div>
+        <?php
+            require 'function.php';
+            $userid=0;
+            echo generateResume($userid,"template1.css");
+        ?>
+    </section>
+
+    <script>
+        const body = document.querySelector('body'),
+        sidebar = body.querySelector('nav'),
+        toggle = body.querySelector(".toggle"),
+    //   searchBtn = body.querySelector(".search-box"),
+        modeSwitch = body.querySelector(".toggle-switch"),
+        modeText = body.querySelector(".mode-text");
+
+
+toggle.addEventListener("click" , () =>{
+    sidebar.classList.toggle("close");
+})
+
+// searchBtn.addEventListener("click" , () =>{
+//     sidebar.classList.remove("close");
+// })
+
+modeSwitch.addEventListener("click" , () =>{
+    body.classList.toggle("dark");
+    
+    if(body.classList.contains("dark")){
+        modeText.innerText = "Light mode";
+    }else{
+        modeText.innerText = "Dark mode";
+        
+    }
+});
+    </script>
+
 </body>
+</html>
