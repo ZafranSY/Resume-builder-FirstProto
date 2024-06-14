@@ -112,32 +112,7 @@
             </div> 
 
         </div>
-        <div class="edit-profile">
-            <div class="navbar">
-                <h2> Profile</h2>
-                <p>Complete your Profile</p>
-                <ul>
-                    <li>Profile</li>
-                    <li class="school">School/College Details</li>
-                    <li>Experience and other</li>
-                </ul>
-            </div>
-            <div class="form-container">
-                <form action="">
-                    <input type="text" id="Fname" placeholder="First Name"style="width:49%;">
-                    <input type="text"id="Lname" placeholder="Last Name"style="width:49%;">
-                    <input type="text" placeholder="User Contact" style="width:30%;">
-                    <input type="email" placeholder="Email"style="width:30%;">
-                    <input type="text"    placeholder="Git Link"style="width:30%;">
-                    <input type="text" placeholder="Address"style="width:100%;">
-                    <input type="number" placeholder="Age"style="width:100%;">
-
-                <button type="button" class="btn btn-primary proceed" data-toggle="button" aria-pressed="false" autocomplete="off">Proceed</button>
-
-                </form>
-            </div>
-            
-        </div>
+        
     </div>
     <script src="./js/profile.js"></script>
 </body>

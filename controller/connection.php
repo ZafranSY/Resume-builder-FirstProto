@@ -1,10 +1,9 @@
 <?php
     $servername ="localhost";
     $username ="root";
-    $password = "root";
-    $db_name ="resemenew";
+    $password = "";
+    $db_name ="resumenew";
     $conn = new mysqli($servername, $username, $password,$db_name );
-
     if($conn->connect_error)
     {
         die("Connnection failed".$conn->connect_error);    }

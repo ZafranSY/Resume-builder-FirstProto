@@ -1,7 +1,7 @@
 <?php
 function connectDatabase() {
     $host = 'localhost';
-    $db = 'resemenew';
+    $db = 'resemunew';
     $user = 'root';
     $pass = 'root';
 

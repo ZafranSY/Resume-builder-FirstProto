@@ -7,8 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <link rel="stylesheet" href="result.css">
-    <link rel="stylesheet" href="theme1.css">
+    <link rel="stylesheet" href="./css/layout.css">
+    <link rel="stylesheet" href="./css/theme1.css">
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     <title>Resume Builder</title> 
 
@@ -86,9 +86,9 @@
     <section class="home">
         <div class="text">Resume Builder</div>
         <?php
-            require 'function.php';
-            $userid=0;
-            echo generateResume($userid,"template1.css");
+            require 'functions.php';
+            $userid=1;
+            echo generateResume($userid,"theme3.css");
         ?>
     </section>
 
