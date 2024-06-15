@@ -20,7 +20,7 @@
                 </span>
 
                 <div class="text logo-text">
-                    <!-- <span class="name">Resume builder</span> -->
+                    <span class="name">ResuMaker</span>
                     <span class="profession">ResuMaker</span>
                 </div>
             </div>
@@ -73,7 +73,7 @@
     </nav>
 
     <section class="home">
-        <div class="text" id="print">Resume Builder</div>
+        <div class="text" id="print">ResuMaker</div>
         <?php
             require 'functions.php';
             $userid=1;
