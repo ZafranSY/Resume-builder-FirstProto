@@ -22,7 +22,7 @@ if (isset($_POST['submit'])) {
     $count = $result->num_rows;
 
     if ($count == 1) {
-        header("Location: ./views/template1.php");
+        header("Location: ./views/layout.php");
     } else {
         echo '<script>
                 window.location.href = "index.php";

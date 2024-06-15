@@ -7,5 +7,4 @@
     if($conn->connect_error)
     {
         die("Connnection failed".$conn->connect_error);    }
-        echo "suces";
     ?> 

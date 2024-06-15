@@ -1,7 +1,7 @@
 <?php
 function connectDatabase() {
     $host = 'localhost';
-    $db = 'resume_builder';
+    $db = 'resumenew';
     $user = 'root';
     $pass = '';
 

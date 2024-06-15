@@ -7,11 +7,17 @@ include("./controller/connection.php");
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>ResuMaker</title>
+    <link rel="icon" href="./views/img/ResuMaker_white.png" type="image/x-icon"/>
+
     <link rel="stylesheet" href="./views/css/login.css" />
 </head>
 <body>
+    
     <div class="container" id="container">
+        <div class="logo">
+            <img src="views\img\ResuMaker_front.png" alt="" style="height:50px; position:absolute; margin:20px 70px ;">
+        </div>
         <div class="form-container sign-in">
             <form action="login.php" method="POST">
                 <h1>Sign In</h1>
