@@ -1,18 +1,7 @@
 <?php
-function connectDatabase() {
-    $host = 'localhost';
-    $db = 'resume_builder';
-    $user = 'root';
-    $pass = '';
 
-    $conn = new mysqli($host, $user, $pass, $db);
+require "../config/config.php";
 
-    if ($conn->connect_error) {
-        die('Connection failed: ' . $conn->connect_error);
-    }
-
-    return $conn;
-}
 
 function fetchUserInfo($conn, $userid) {
     $sql = "SELECT * FROM users WHERE userid = $userid";
@@ -52,7 +41,7 @@ function fetchProjects($conn, $userid) {
 
 
 function generateResume($userid,$cssHref) {
-    $conn = connectDatabase();
+    $conn = connectReturnConObj();
     $userInfo = fetchUserInfo($conn, $userid);
     $userSkills = fetchUserSkills($conn, $userid);
     $userWorkHistory = fetchWorkHistory($conn, $userid);
