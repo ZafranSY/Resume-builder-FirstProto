@@ -1,105 +1,124 @@
 /* General styles */
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-  }
-  
-  /* Container */
-  .container {
-    width: 60%;
-    margin: 50px auto;
-    background-color: #ffffff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    border-radius: 8px;
-  }
-  
-  /* Header */
-  .header {
-    background-color: #8e24aa;
-    color: #ffffff;
-    padding: 20px;
-    border-radius: 8px 8px 0 0;
-    text-align: center;
-  }
-  
-  .header h2 {
-    margin: 0;
-  }
-  
-  /* Tabs */
-  .tabs {
-    display: flex;
-    justify-content: space-around;
-    background-color: #6a1b9a;
-    border-radius: 4px;
-    margin-top: 20px;
-  }
-  
-  .tabs .tab {
-    flex: 1;
-    padding: 10px;
-    text-align: center;
-    cursor: pointer;
-    color: #ffffff;
-    border-radius: 4px;
-  }
-  
-  .tabs .tab.active {
-    background-color: #8e24aa;
-  }
-  
-  /* Form sections */
-  .sections .section {
-    display: none;
-  }
-  
-  .sections .section.active {
-    display: block;
-    margin-top: 20px;
-  }
-  
-  /* Form fields */
-  .form-group {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 15px;
-  }
-  
-  .form-group label {
-    margin-bottom: 5px;
-    color: #6a1b9a;
-  }
-  
-  .form-group input,
-  .form-group textarea {
-    padding: 10px;
-    border: 1px solid #cccccc;
-    border-radius: 4px;
-  }
-  
-  .form-group textarea {
-    resize: vertical;
-    height: 100px;
-  }
-  
-  /* Buttons */
-  .button-container {
-    text-align: right;
-  }
-  
-  .button {
-    background-color: #8e24aa;
-    color: #ffffff;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 4px;
-  }
-  
-  .button:hover {
-    background-color: #6a1b9a;
-  }
-  
+  font-family: 'Roboto', sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+/* Container */
+.container {
+  width: 60%;
+  margin: 50px auto;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 8px;
+}
+
+/* Header */
+.header {
+  background-color: #8e24aa;
+  color: #ffffff;
+  padding: 20px;
+  border-radius: 8px 8px 0 0;
+  text-align: center;
+}
+
+.header h2 {
+  margin: 0;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  justify-content: space-around;
+  background-color: #6a1b9a;
+  border-radius: 4px;
+  margin-top: 20px;
+}
+
+.tabs div {
+  flex: 1;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  color: #ffffff;
+  border-radius: 4px;
+}
+
+.tabs div.active {
+  background-color: #8e24aa;
+}
+
+/* Form sections */
+.section {
+  display: none;
+}
+
+.section.active {
+  display: block;
+  margin-top: 20px;
+}
+
+.section h3 {
+  margin-top: 0;
+}
+
+/* Form fields */
+.form-group {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin-right: 10px;
+}
+
+.input-group label {
+  margin-bottom: 5px;
+  line-height: 32px;
+}
+
+.input-group.full-width {
+  flex: 2;
+}
+
+.input-group.full-width input,
+.input-group.full-width textarea {
+  width: 100%;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 8px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+}
+
+.form-group textarea {
+  resize: vertical;
+  height: 100px;
+}
+
+/* Buttons */
+.button-container {
+  text-align: right;
+}
+
+.button {
+  background-color: #8e24aa;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.button:hover {
+  background-color: #6a1b9a;
+}
