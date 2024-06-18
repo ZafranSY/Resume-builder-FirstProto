@@ -1,3 +1,8 @@
+<?php
+    session_start();
+    require 'functions.php';
+    $selectedTheme = isset($_COOKIE['selected_theme']) ? $_COOKIE['selected_theme'] : 'theme1';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +12,6 @@
     <title>ResuMaker</title>
     <link rel="icon" href="./img/ResuMaker_white.png" type="image/x-icon"/>
     <link rel="stylesheet" href="./css/layout.css">
-    <link rel="stylesheet" href="./css/theme1.css">
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
 
 </head>
@@ -32,9 +36,15 @@
             <div class="menu">
                 <ul class="menu-links">
                     <li class="nav-link">
-                        <a href="#">
+                        <a href="#" onclick="setThemeCookie('theme1','3')">
                             <i class='bx bx-paint icon'></i>
-                            <span class="text nav-text">Change Theme</span>
+                            <span class="text nav-text">Change Theme 1</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#" onclick="setThemeCookie('theme2','3')">
+                            <i class='bx bx-paint icon'></i>
+                            <span class="text nav-text">Change Theme 2</span>
                         </a>
                     </li>
 
@@ -75,14 +85,27 @@
     <section class="home">
         <div class="text" id="print">ResuMaker</div>
         <?php
-            session_start();
-            require 'functions.php';
+            
             $userid=$_SESSION['user_id'];;
-            echo generateResume($userid,"./css/theme1.css");
+            echo generateResume($userid,"./css/" . $selectedTheme . ".css");
         ?>
     </section>
 
     <script>
+
+        function setThemeCookie(themeName, daysToExpire) {
+            var expires = "";
+            if (daysToExpire) {
+                var date = new Date();
+                date.setTime(date.getTime() + (daysToExpire * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = "selected_theme=" + themeName + expires + "; path=/";
+            setTimeout(function() {
+                location.reload();
+            }, 1000);
+        }
+
         const body = document.querySelector('body'),
         sidebar = body.querySelector('nav'),
         toggle = body.querySelector('.toggle'),
