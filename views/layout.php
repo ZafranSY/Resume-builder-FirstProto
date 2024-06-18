@@ -75,18 +75,19 @@
     <section class="home">
         <div class="text" id="print">ResuMaker</div>
         <?php
+            session_start();
             require 'functions.php';
-            $userid=1;
-            echo generateResume($userid,'./css/template1.css');
+            $userid=$_SESSION['user_id'];;
+            echo generateResume($userid,"./css/theme1.css");
         ?>
     </section>
 
     <script>
         const body = document.querySelector('body'),
-              sidebar = body.querySelector('nav'),
-              toggle = body.querySelector('.toggle'),
-              modeSwitch = body.querySelector('.toggle-switch'),
-              modeText = body.querySelector('.mode-text');
+        sidebar = body.querySelector('nav'),
+        toggle = body.querySelector('.toggle'),
+        modeSwitch = body.querySelector('.toggle-switch'),
+        modeText = body.querySelector('.mode-text');
         const img = document.querySelector(".image-text img");
 
         body.addEventListener("click", () => {

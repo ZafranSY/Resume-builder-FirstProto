@@ -104,15 +104,30 @@
                     </div>
                 </form>
             </div>
-            <div class="Founder-background">
-                <p>Leonardo di ser Piero da Vinci was an Italian Renaissance polymath. According to data available online, Leonardo da Vinci invented the first professional profile in 1482, which we call as the résumé. The word Resume originated from French résumé“to summarize”, and from Latin resumere “to take back”.</p>
-
-                <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">Read More</button>
-
-            </div> 
-
+            <div class="section" id="experience">
+                <form action="./views/submit_experiences.php" method="post">
+                    <div class="form-group">
+                        <label for="work">Work</label>
+                        <textarea id="work" name="work"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="projects">Projects</label>
+                        <textarea id="projects" name="projects"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="skills">Skills</label>
+                        <textarea id="skills" name="skills"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="interests">Interests</label>
+                        <textarea id="interests" name="interests"></textarea>
+                    </div>
+                    <div class="button-container">
+                        <button class="button" type="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
         </div>
-        
     </div>
     <script src="./js/profile.js"></script>
 </body>

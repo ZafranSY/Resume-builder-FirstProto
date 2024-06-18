@@ -1,23 +1,22 @@
 <?php
-include("./controller/connection.php");
- if (isset($_POST['submit'])) {
-    $email = $_POST['email'];
-  $password = $_POST['password'];
-  $cpassword = $_POST['cpassword'];
-  $sql = "select * from users where email = '$email'";
-        $result = mysqli_query($conn, $sql);  
+include("./config/config.php");
+if (isset($_POST['submit'])) {
+$email = $_POST['email'];
+$password = $_POST['password'];
+$cpassword = $_POST['cpassword'];
 
-        $count_email = mysqli_num_rows($result);  
-    if($count_email == 1)
-    {
-        if($password == $cpassword)
-        {
+$sql = "select * from users where email = '$email'";
+$result = mysqli_query($conn, $sql);  
+
+$count_email = mysqli_num_rows($result);  
+
+    if($count_email == 1){
+        if($password == $cpassword){
             $hash = password_hash($password,PASSWORD_DEFAULT);
-               $sql = "update users SET password = '$password' WHERE email = '$email'";
+            $sql = "update users SET password = '$password' WHERE email = '$email'";
 
         $result = mysqli_query($conn, $sql);  
-        if($result)
-        {
+        if($result){
             header("Location: index.php");
         }
         }
@@ -25,7 +24,7 @@ include("./controller/connection.php");
     {
         if($count_email == 0)
         {
-             echo  '<script>
+            echo  '<script>
                         window.location.href = "index.php";
                         alert("Email not Exists!!")
                     </script>';
