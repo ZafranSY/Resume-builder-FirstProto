@@ -1,67 +1,64 @@
 <?php
 function connectDatabase() {
     $host = 'localhost';
-    $db = 'resumenew';
+    $db = 'resume_builder';
     $user = 'root';
     $pass = '';
 
-    $dsn = "mysql:host=$host;dbname=$db;charset=utf8mb4";
-    $options = [
-        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-    ];
+    $conn = new mysqli($host, $user, $pass, $db);
 
-    try {
-        return new PDO($dsn, $user, $pass, $options);
-    } catch (PDOException $e) {
-        die('Connection failed: ' . $e->getMessage());
+    if ($conn->connect_error) {
+        die('Connection failed: ' . $conn->connect_error);
     }
+
+    return $conn;
 }
 
-function fetchUserInfo($pdo, $userid) {
-    $stmt = $pdo->prepare("SELECT * FROM users WHERE userid = ?");
-    $stmt->execute([$userid]);
-    return $stmt->fetch();
+function fetchUserInfo($conn, $userid) {
+    $sql = "SELECT * FROM users WHERE userid = $userid";
+    $result = $conn->query($sql);
+    return $result->fetch_assoc();
 }
 
-function fetchUserSkills($pdo, $userid) {
-    $stmt = $pdo->prepare("SELECT * FROM user_skills WHERE user_id = ?");
-    $stmt->execute([$userid]);
-    return $stmt->fetchAll();
+function fetchUserSkills($conn, $userid) {
+    $sql = "SELECT * FROM user_skills WHERE user_id = $userid";
+    $result = $conn->query($sql);
+    return $result->fetch_all(MYSQLI_ASSOC);
 }
 
-function fetchWorkHistory($pdo, $userid) {
-    $stmt = $pdo->prepare("SELECT * FROM work_history WHERE user_id = ?");
-    $stmt->execute([$userid]);
-    return $stmt->fetchAll();
+function fetchWorkHistory($conn, $userid) {
+    $sql = "SELECT * FROM work_history WHERE user_id = $userid";
+    $result = $conn->query($sql);
+    return $result->fetch_all(MYSQLI_ASSOC);
 }
 
-function fetchEducation($pdo, $userid) {
-    $stmt = $pdo->prepare("SELECT * FROM education WHERE user_id = ?");
-    $stmt->execute([$userid]);
-    return $stmt->fetchAll();
+function fetchEducation($conn, $userid) {
+    $sql = "SELECT * FROM education WHERE user_id = $userid";
+    $result = $conn->query($sql);
+    return $result->fetch_all(MYSQLI_ASSOC);
 }
 
-function fetchCertifications($pdo, $userid) {
-    $stmt = $pdo->prepare("SELECT * FROM certifications WHERE user_id = ?");
-    $stmt->execute([$userid]);
-    return $stmt->fetchAll();
+function fetchCertifications($conn, $userid) {
+    $sql = "SELECT * FROM certifications WHERE user_id = $userid";
+    $result = $conn->query($sql);
+    return $result->fetch_all(MYSQLI_ASSOC);
 }
 
-function fetchProjects($pdo, $userid) {
-    $stmt = $pdo->prepare("SELECT * FROM projects WHERE user_id = ?");
-    $stmt->execute([$userid]);
-    return $stmt->fetchAll();
+function fetchProjects($conn, $userid) {
+    $sql = "SELECT * FROM projects WHERE user_id = $userid";
+    $result = $conn->query($sql);
+    return $result->fetch_all(MYSQLI_ASSOC);
 }
+
 
 function generateResume($userid,$cssHref) {
-    $pdo = connectDatabase();
-    $userInfo = fetchUserInfo($pdo, $userid);
-    $userSkills = fetchUserSkills($pdo, $userid);
-    $userWorkHistory = fetchWorkHistory($pdo, $userid);
-    $userEducation = fetchEducation($pdo, $userid);
-    $userCertifications = fetchCertifications($pdo, $userid);
-    $userProjects = fetchProjects($pdo, $userid);
+    $conn = connectDatabase();
+    $userInfo = fetchUserInfo($conn, $userid);
+    $userSkills = fetchUserSkills($conn, $userid);
+    $userWorkHistory = fetchWorkHistory($conn, $userid);
+    $userEducation = fetchEducation($conn, $userid);
+    $userCertifications = fetchCertifications($conn, $userid);
+    $userProjects = fetchProjects($conn, $userid);
 
     ob_start();
     ?>

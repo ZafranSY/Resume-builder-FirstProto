@@ -1,11 +1,10 @@
 CREATE TABLE users (
-    userid INT PRIMARY KEY,
+    userid INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(50),
     address VARCHAR(100),
     email VARCHAR(100),
-    phone_number VARCHAR(20)
-    password VARCHAR(255);
-    
+    phone_number VARCHAR(20),
+    password VARCHAR(255)
 );
 
 CREATE TABLE user_skills (

@@ -1,11 +1,13 @@
 :root {
-    --main-bg-color: #f7f7f7;
-    --border-color: #ddd;
-    --text-color: #333;
-    --header-color: #000;
-    --section-title-color: #666;
-    --section-border-color: #ccc;
-    --skill-bg-color: #ddd;
+    --main-bg-color: #f0f0f0;
+    --border-color: #999;
+    --text-color: #444;
+    --header-color: #2c3e50;
+    --section-title-color: #3498db;
+    --section-border-color: #bdc3c7;
+    --skill-bg-color: #ecf0f1;
+    --bg: #fff;
+    --project-bg: #eaeaea; /* New variable for project background */
 }
 
 .theme-resume {
@@ -21,48 +23,54 @@
 
 .theme-header {
     text-align: center;
-    margin-bottom: 10mm;
+    margin-bottom: 20px;
 }
 
 .theme-header-title {
     margin: 0;
-    font-size: 24px;
+    font-size: 16px;
     color: var(--header-color);
 }
 
 .theme-header-subtitle {
-    font-size: 14px;
+    font-size: 12px;
     color: var(--header-color);
 }
 
 .theme-section {
-    overflow: hidden;
-    padding: 0 10px;
+    padding: 20px;
     box-sizing: border-box;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
+    border: 1px solid var(--section-border-color);
+    border-radius: 5px;
 }
 
 .theme-section-title {
-    margin: 0 0 5px;
-    border-bottom: 1px solid var(--section-border-color);
-    padding-bottom: 5px;
+    margin: 0 0 15px;
     font-size: 16px;
     color: var(--section-title-color);
 }
 
 .theme-job, .theme-school, .theme-project {
-    margin-bottom: 5px;
+    margin-bottom: 15px;
 }
 
 .theme-job-title, .theme-school-title, .theme-project-title {
     margin: 0;
-    font-size: 14px;
+    font-size: 16px;
+    color: var(--text-color);
 }
 
 .theme-grid-container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.theme-grid-container > *:nth-child(3n-2),
+.theme-grid-container > *:nth-child(3n-1),
+.theme-grid-container > *:nth-child(3n) {
+    grid-column: span 2;
 }
 
 .theme-skills-list, .theme-certifications-list {
@@ -72,32 +80,23 @@
 
 .theme-skill-item, .theme-certification-item {
     background-color: var(--skill-bg-color);
-    margin: 3px 0;
-    padding: 5px 10px;
-    border-radius: 3px;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 5px;
     font-size: 12px;
+    color: var(--text-color);
 }
 
-.theme-contact-info {
-    margin-bottom: 10px;
+.theme-projects .theme-project {
+    display: flex;
+    flex-wrap: wrap;
 }
 
-.theme-experience {
-    margin-bottom: 10px;
-}
-
-.theme-education {
-    margin-bottom: 10px;
-}
-
-.theme-certifications {
-    margin-bottom: 10px;
-}
-
-.theme-skills {
-    margin-bottom: 10px;
-}
-
-.theme-projects {
-    margin-bottom: 10px;
+.theme-project {
+    flex: 1 1 calc(33% - 10px);
+    margin: 0 5px 10px;
+    padding: 20px;
+    border: 1px solid var(--section-border-color);
+    border-radius: 5px;
+    background-color: var(--project-bg); /* Changed to use variable */
 }

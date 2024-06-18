@@ -1,30 +1,24 @@
 <?php
-include("./controller/connection.php");
+include("./config/config.php");
 ?>
- 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ResuMaker</title>
-    <link rel="icon" href="./views/img/ResuMaker_white.png" type="image/x-icon"/>
-
+    <title>Document</title>
     <link rel="stylesheet" href="./views/css/login.css" />
 </head>
 <body>
-    
     <div class="container" id="container">
-        <div class="logo">
-            <img src="views\img\ResuMaker_front.png" alt="" style="height:50px; position:absolute; margin:20px 70px ;">
-        </div>
         <div class="form-container sign-in">
             <form action="login.php" method="POST">
                 <h1>Sign In</h1>
                 <input type="email" placeholder="Email" name="email" required/>
                 <input type="password" placeholder="Password" name="pass" required/>
                 <a href="views\forgot_pass.php" class="forgot-password">Forgot password?</a>               
-                 <button type="submit" name="submit">Sign In</button>
+                <button type="submit" name="submit">Sign In</button>
                 <!-- <span class="message"> Sending your message...</span> -->
 
             </form>
@@ -36,7 +30,7 @@ include("./controller/connection.php");
                 <input type="email" placeholder="Email" name="email"required/>
                 <input type="password" placeholder="Password" name="pass"required />
                 <input type="password" placeholder="Password" name="cpass" required/>
-                 <button type="submit" name="submit">Sign Up</button>
+                <button type="submit" name="submit">Sign Up</button>
             </form>
         </div>
         
