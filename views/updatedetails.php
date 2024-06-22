@@ -1,7 +1,6 @@
 <?php
     session_start();
     require 'functions.php';
-    $selectedTheme = isset($_COOKIE['selected_theme']) ? $_COOKIE['selected_theme'] : 'theme1';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -36,33 +35,18 @@
             <div class="menu">
                 <ul class="menu-links">
                     <li class="nav-link">
-                        <a href="#">
+                        <a href="layout.php">
                             <i class='bx bx-file icon'></i>
                             <span class="text nav-text">View Resume</span>
                         </a>
                     </li>
-                    
 
                     <li class="nav-link">
-                        <a href="viewdetails.php">
+                        <a href="#">
                             <i class='bx bx-bar-chart-alt-2 icon'></i>
                             <span class="text nav-text">Update Details</span>
                         </a>
                     </li>
-
-                    <li class="nav-link">
-                        <a href="#" onclick="setThemeCookie('theme1','3')">
-                            <i class='bx bx-paint icon'></i>
-                            <span class="text nav-text">Change Theme 1</span>
-                        </a>
-                    </li>
-                    <li class="nav-link">
-                        <a href="#" onclick="setThemeCookie('theme2','3')">
-                            <i class='bx bx-paint icon'></i>
-                            <span class="text nav-text">Change Theme 2</span>
-                        </a>
-                    </li>
-
                 </ul>
             </div>
 
@@ -94,10 +78,80 @@
     <section class="home">
         <div class="text" id="print">ResuMaker</div>
         <?php
+
+        echo "<style>
             
-            $userid=$_SESSION['user_id'];;
-            echo generateResume($userid,"./css/" . $selectedTheme . ".css");
+            .container {
+                background-color: #f6f5ff;
+                padding: 20px;
+                border-radius: 5px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                max-width: 500px;
+                width: 100%;
+                text-align: center;
+                margin-left:30vw;
+            }
+            h2 {
+                color: #695cfe;
+                margin-bottom: 20px;
+            }
+            form {
+                text-align: left;
+            }
+            label {
+                display: block;
+                font-weight: bold;
+                color: #707070;
+                margin-bottom: 5px;
+            }
+            input[type='text'], input[type='submit'] {
+                width: calc(100% - 22px); /* Adjusting for padding and borders */
+                padding: 10px;
+                margin-bottom: 10px;
+                border: 1px solid #ddd;
+                border-radius: 3px;
+                box-sizing: border-box;
+                font-size: 14px;
+            }
+            input[type='submit'] {
+                background-color: #695cfe;
+                color: #fff;
+                cursor: pointer;
+            }
+            input[type='submit']:hover {
+                background-color: #554aa2;
+            }
+        </style>";
+
+        if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit_update'])) {
+            $table = $_POST['table'];
+            $update_data = [];
+            foreach ($_POST as $key => $value) {
+                if ($key != 'table' && $key != 'submit_update') {
+                    $update_data[$key] = $conn->real_escape_string($value);
+                }
+            }
+            $whereclause = htmlspecialchars(json_encode($update_data));
+            // Display form with current data populated
+            echo "<div class='container'>";
+            echo "<h2>Update Record in Table: $table</h2>";
+            echo "<form action='UpdateDetails/update_process.php' method='post'>";
+            echo "<input type='hidden' name='table' value='$table'>";
+            foreach ($update_data as $key => $value) {
+                if($key!='user_id'){
+                    echo "<label>$key:</label>";
+                    echo "<input type='text' name='$key' value='$value'><br>";
+                }
+                else
+                echo "<input type='hidden' name='$key' value='$value'><br>";        
+            }
+            echo "<input type='hidden' name='where_clause' value='$whereclause'>";
+            echo "<input type='submit' name='submit_update_process' value='Update'>";
+            echo "</form>";
+            echo "</div>";
+        }
         ?>
+
     </section>
 
     <script>
