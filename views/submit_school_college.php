@@ -1,21 +1,30 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $school_name = $_POST['school_name'];
-    $ssc_marks = $_POST['ssc_marks'];
-    $hsc_college_name = $_POST['hsc_college_name'];
-    $hsc_marks = $_POST['hsc_marks'];
-    $degree_college_name = $_POST['degree_college_name'];
-    $branch = $_POST['branch'];
-    $current_aggregate_pointer = $_POST['current_aggregate_pointer'];
+include 'db_connection.php';
 
-    // Handle form data, for example, save it to a database or process it as needed
-    // Example: echo data
-    echo "School Name: " . $school_name . "<br>";
-    echo "SSC Marks: " . $ssc_marks . "<br>";
-    echo "HSC College Name: " . $hsc_college_name . "<br>";
-    echo "HSC Marks: " . $hsc_marks . "<br>";
-    echo "Degree College Name: " . $degree_college_name . "<br>";
-    echo "Branch: " . $branch . "<br>";
-    echo "Current Aggregate Pointer: " . $current_aggregate_pointer . "<br>";
+$school_name = $_POST['school_name'];
+$school_location = $_POST['school_location'];
+$school_year = $_POST['school_year'];
+$school_description = $_POST['school_description'];
+$college_name = $_POST['college_name'];
+$college_location = $_POST['college_location'];
+$college_year = $_POST['college_year'];
+$college_description = $_POST['college_description'];
+$university_name = $_POST['university_name'];
+$university_location = $_POST['university_location'];
+$university_year = $_POST['university_year'];
+$university_description = $_POST['university_description'];
+
+$user_id = 1; 
+
+$sql = "INSERT INTO education (user_id, institution, degree, start_date, end_date, gpa) VALUES ('$user_id', '$school_name', 'School', '$school_year', '', '0.00'),
+        ('$user_id', '$college_name', 'College', '$college_year', '', '0.00'),
+        ('$user_id', '$university_name', 'University', '$university_year', '', '0.00')";
+
+if ($conn->query($sql) === TRUE) {
+    echo "Education details saved successfully!";
+} else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
 }
+
+$conn->close();
 ?>

@@ -19,7 +19,7 @@
         </div>
         <div class="sections">
             <div class="section active" id="profile">
-                <form action="./views/submit_profile.php" method="post">
+                <form action="submit_profile.php" method="post">
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" id="name" name="name">
@@ -45,12 +45,12 @@
                         <input type="url" id="linkedin" name="linkedin">
                     </div>
                     <div class="button-container">
-                        <button class="button" type="button">Proceed</button>
+                        <button class="button" type="submit">Proceed</button>
                     </div>
                 </form>
             </div>
             <div class="section" id="education">
-                <form action="./views/submit_school_college.php" method="post">
+                <form action="submit_school_college.php" method="post">
                     <div class="form-group">
                         <label for="school_name">School Name</label>
                         <input type="text" id="school_name" name="school_name">
@@ -100,12 +100,12 @@
                         <textarea id="university_description" name="university_description"></textarea>
                     </div>
                     <div class="button-container">
-                        <button class="button" type="button">Proceed</button>
+                        <button class="button" type="submit">Proceed</button>
                     </div>
                 </form>
             </div>
             <div class="section" id="experience">
-                <form action="./views/submit_experiences.php" method="post">
+                <form action="submit_experiences.php" method="post">
                     <div class="form-group">
                         <label for="work">Work</label>
                         <textarea id="work" name="work"></textarea>

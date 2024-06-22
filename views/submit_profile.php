@@ -1,21 +1,24 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $first_name = $_POST['first_name'];
-    $last_name = $_POST['last_name'];
-    $user_contact = $_POST['user_contact'];
-    $email_address = $_POST['email_address'];
-    $git_link = $_POST['git_link'];
-    $address = $_POST['address'];
-    $age = $_POST['age'];
+include 'db_connection.php';
 
-    // Handle form data, for example, save it to a database or process it as needed
-    // Example: echo data
-    echo "First Name: " . $first_name . "<br>";
-    echo "Last Name: " . $last_name . "<br>";
-    echo "User Contact: " . $user_contact . "<br>";
-    echo "Email Address: " . $email_address . "<br>";
-    echo "Git Link: " . $git_link . "<br>";
-    echo "Address: " . $address . "<br>";
-    echo "Age: " . $age . "<br>";
+$name = $_POST['name'];
+$email = $_POST['email'];
+$phone = $_POST['phone'];
+$address = $_POST['address'];
+$summary = $_POST['summary'];
+$linkedin = $_POST['linkedin'];
+
+
+$sql = "INSERT INTO users (name, address, email, phone_number) VALUES ('$name', '$address', '$email', '$phone')";
+if ($conn->query($sql) === TRUE) {
+    $user_id = $conn->insert_id;
+    
+    $sql_summary = "INSERT INTO user_summary (user_id, summary, linkedin) VALUES ('$user_id', '$summary', '$linkedin')";
+    $conn->query($sql_summary);
+    echo "Profile saved successfully!";
+} else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
 }
+
+$conn->close();
 ?>
