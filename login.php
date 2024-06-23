@@ -13,6 +13,10 @@ if (isset($_POST['submit'])) {
         exit;
     }
 
+    if($email=='admin@admin.com'){
+        header('Location: views/admin/admin.php');
+    }
+
     // Use prepared statements to prevent SQL injection
     $stmt = $conn->prepare("SELECT * FROM users WHERE email = ?");
     $stmt->bind_param("s", $email);
@@ -23,7 +27,12 @@ if (isset($_POST['submit'])) {
     if ($row && password_verify($password, $row['password'])) {
         session_start();
         $_SESSION['user_id'] = $row['userid'];
-        header("Location: ./views/profile.php");
+        if (empty($row['name'])){
+            header("Location: ./views/profile.php");
+        }
+        else{
+            header("Location: ./views/layout.php");
+        }
         exit;
     } else {
         echo '<script>

@@ -216,7 +216,7 @@ require 'functions.php';
                             echo "<button type='submit' name='submit_update' class='btn btn-update'>Update</button>";
                             echo "</form>";
                             echo " ";
-                            echo "<form action='UpdateDetails/delete.php' method='post' class='d-inline'>";
+                            echo "<form action='UpdateDetails/delete.php' method='post' class='d-inline' onsubmit='return confirmDelete()'>";
                             echo "<input type='hidden' name='table' value='$table'>";
                             foreach ($row as $key => $value) {
                                 echo "<input type='hidden' name='$key' value='$value'>";
@@ -301,6 +301,10 @@ echo $content; // Output the content
             img.src = "img/ResuMaker.png";
         }
     });
+
+    function confirmDelete() {
+        return confirm("Are you sure you want to delete this entry?");
+    }
 </script>
 
 </body>
