@@ -1,5 +1,5 @@
 <?php
-include 'db_connection.php';
+include '../database/db_connection.php';
 
 $school_name = $_POST['school_name'];
 $school_location = $_POST['school_location'];
@@ -16,9 +16,10 @@ $university_description = $_POST['university_description'];
 
 $user_id = 1; 
 
-$sql = "INSERT INTO education (user_id, institution, degree, start_date, end_date, gpa) VALUES ('$user_id', '$school_name', 'School', '$school_year', '', '0.00'),
-        ('$user_id', '$college_name', 'College', '$college_year', '', '0.00'),
-        ('$user_id', '$university_name', 'University', '$university_year', '', '0.00')";
+$sql = "INSERT INTO education (user_id, institution, degree, start_date, end_date, gpa) VALUES 
+        ('$user_id', '$school_name', 'School', '$school_year-01-01', '$school_year-12-31', '0.00'),
+        ('$user_id', '$college_name', 'College', '$college_year-01-01', '$college_year-12-31', '0.00'),
+        ('$user_id', '$university_name', 'University', '$university_year-01-01', '$university_year-12-31', '0.00')";
 
 if ($conn->query($sql) === TRUE) {
     echo "Education details saved successfully!";
