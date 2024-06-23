@@ -96,6 +96,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo $insertSkillsSql."\n";
     echo $insertCertificationSql."\n";
     echo $insertProjectSql."\n";
+
+    header('Location: layout.php');
 }
 
 ?>
