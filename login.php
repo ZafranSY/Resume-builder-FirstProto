@@ -27,7 +27,7 @@ if (isset($_POST['submit'])) {
     if ($row && password_verify($password, $row['password'])) {
         session_start();
         $_SESSION['user_id'] = $row['userid'];
-        if (empty($row['name'])){
+        if (empty($row['address'])){
             header("Location: ./views/profile.php");
         }
         else{
