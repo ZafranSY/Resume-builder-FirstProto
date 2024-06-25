@@ -291,7 +291,7 @@ session_start();
             modeText = body.querySelector('.mode-text');
         const img = document.querySelector(".image-text img");
 
-        body.addEventListener("click", () => {
+        sidebar.addEventListener("click", () => {
             sidebar.classList.toggle("close");
         });
 
